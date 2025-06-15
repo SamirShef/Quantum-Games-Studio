@@ -42,6 +42,18 @@ body {
     aspect-ratio: 1 / 1;
 }
 
+.main-logo {
+    background-image: url("../../img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    aspect-ratio: 1 / 1;
+    width: 40%;
+    opacity: 0;
+
+    animation: .7s .2s show-anim forwards;
+}
+
 .coddy-link {
     color: white;
     text-decoration: none;
@@ -87,4 +99,17 @@ body {
     margin-top: 2rem;
     font-size: 1.2rem;
     text-align: center;
+    opacity: 0;
+
+    animation: .7s .4s show-anim ease forwards;
+}
+
+@keyframes show-anim {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    } to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
