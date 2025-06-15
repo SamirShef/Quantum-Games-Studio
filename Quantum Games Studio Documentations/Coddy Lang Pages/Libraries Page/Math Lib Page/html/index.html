@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Math Library</title>
+    <link rel="icon" href="../img/logo2.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="upper-panel">
+        <a href="../../../../Main Page/html/index.html" class="logo-link">
+            <div class="logo"></div>
+        </a>
+        <p style="font-size: xx-large;">|</p>
+        <p><a class="coddy-link" href="../../../Main Page/html/index.html">Coddy Lang</a></p>
+    </div>
+    <div class="library-name">
+        <h1>Библиотека Math</h1>
+    </div>
+
+    <div class="main">
+        <p><h2>Основные классы</h2></p>
+        <ul style="font-size: 1.2rem;">
+            <li><b><a href="#math-class" style="color: #199cf3;">Math</a></b></li>
+        </ul>
+
+        <p style="height: 30px;"></p>
+
+        <div id="math-class">
+            <p><h2>Статический класс Math</h2></p>
+            <p>Класс Math нужен для расчёта любых математических операций</p>
+            <table>
+                <tr>
+                    <th>Методы</th>
+                    <th>Назначение</th>
+                </tr>
+                <tr>
+                    <td>sqrt(num : int)</td>
+                    <td>Просчитывает и возвращает квадратный корень переданного числа (подходит для использования со всеми встроенными числовыми типами)</td>
+                </tr>
+                <tr>
+                    <td>abs(num : int)</td>
+                    <td>Просчитывает и возвращает модуль переданного числа (подходит для использования со всеми встроенными числовыми типами)</td>
+                </tr>
+                <tr>
+                    <td>round(num : float)</td>
+                    <td>Просчитывает и возвращает целочисленный эквивалент переданного числа в стандартном округлённом виде (подходит для использования со всеми встроенными дробными числовыми типами)</td>
+                </tr>
+                <tr>
+                    <td>floor(num : float)</td>
+                    <td>Просчитывает и возвращает целочисленный эквивалент переданного числа в округлённом до ближайшего меньшего целого значения виде (подходит для использования со всеми встроенными дробными числовыми типами)</td>
+                </tr>
+                <tr>
+                    <td>ceil(num : float)</td>
+                    <td>Просчитывает и возвращает целочисленный эквивалент переданного числа в округлённом до ближайшего большего целого значения виде (подходит для использования со всеми встроенными дробными числовыми типами)</td>
+                </tr>
+                <tr>
+                    <td>max(num1 : int, num2 : int)</td>
+                    <td>Просчитывает и возвращает максимальное из переданных чисел (подходит для использования со всеми встроенными числовыми типами)</td>
+                </tr>
+                <tr>
+                    <td>min(num1 : int, num2 : int)</td>
+                    <td>Просчитывает и возвращает минимальное из переданных чисел (подходит для использования со всеми встроенными числовыми типами)</td>
+                </tr>
+                <tr>
+                    <td>pow(num : int, pow : int)</td>
+                    <td>Просчитывает и возвращает переданное число, возведённое в переданную целую степень (тип первого аргумента функции может быть любым встроенным дробным числовым типом)</td>
+                </tr>
+                <tr>
+                    <td>clamp(num : int, min : int, max : int)</td>
+                    <td>Просчитывает и возвращает переданное число, зажатое в диапозоне от переданного минимума, до переданного максимума (подходит для использования со всеми встроенными дробными числовыми типами)</td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>Поля</th>
+                    <th>Назначение</th>
+                </tr>
+                <tr>
+                    <td>pi</td>
+                    <td>Число пи с точностью до 20 знаков после запятой</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td>Число Эйлера с точностью до 20 знаков после запятой</td>
+                </tr>
+            </table>
+
+            <p><h2>Примеры</h2></p>
+            <code><span class="keyword">include</span> <span class="string-lit">"math.cd"</span>;
+
+<span class="function">println</span>(<span class="identifier">Math</span>.<span class="function">round</span>(<span class="number-lit">24.5f</span>));       <span class="comment">// Выведет 25</span>
+<span class="function">println</span>(<span class="identifier">Math</span>.<span class="function">sqrt</span>(<span class="number-lit">24</span>));           <span class="comment">// Выведет 4</span>
+<span class="function">println</span>(<span class="identifier">Math</span>.<span class="function">sqrt</span>(<span class="number-lit">24f</span>));          <span class="comment">// Выведет 4,898979</span>
+<span class="function">println</span>(<span class="identifier">Math</span>.<span class="function">clamp</span>(<span class="number-lit">6</span>, <span class="number-lit">8</span>, <span class="number-lit">10</span>));    <span class="comment">// Выведет 8</span></code>
+        </div>
+    </div>
+</body>
+</html>
