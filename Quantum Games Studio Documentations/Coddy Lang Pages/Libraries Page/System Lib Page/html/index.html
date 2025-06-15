@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>System Library</title>
+    <link rel="icon" href="../img/logo2.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class="upper-panel">
+        <a href="../../../Main Page/html/index.html" class="logo-link">
+            <div class="logo"></div>
+        </a>
+        <p style="font-size: xx-large;">|</p>
+        <p><a class="coddy-link" href="../../../Main Page/html/index.html">Coddy Lang</a></p>
+    </div>
+    <div class="library-name">
+        <h1>Библиотека System</h1>
+    </div>
+
+    <div class="main">
+        <p><h2>Основные классы</h2></p>
+        <ul style="font-size: 1.2rem;">
+            <li><b><a href="#file-class" style="color: #199cf3;">File</a></b></li>
+            <li><b><a href="#list-class" style="color: #199cf3;">List&lt;T&gt;</a></b></li>
+        </ul>
+
+        <p style="height: 30px;"></p>
+
+        <div id="file-class">
+            <p><h2>Класс File</h2></p>
+            <p>Класс File нужен для взаимодействия с файловой системой Windows из Coddy</p>
+            <table>
+                <tr>
+                    <th>Методы</th>
+                    <th>Назначение</th>
+                </tr>
+                <tr>
+                    <td>delete(path : string)</td>
+                    <td>Удаляет файл по указанному пути</td>
+                </tr>
+                <tr>
+                    <td>exists(path : string)</td>
+                    <td>Проверяет, существует ли файл по указанному пути и возвращает true если существует, иначе - false</td>
+                </tr>
+                <tr>
+                    <td>readAllText(path : string)</td>
+                    <td>Возвращает текст из файла по указанному пути</td>
+                </tr>
+                <tr>
+                    <td>writeAllText(path : string, content : string)</td>
+                    <td>Устанавливает указанный текст в файл по указанному пути. Если файла по указанному пути не существует, то он предварительно создастся по указанному пути</td>
+                </tr>
+            </table>
+
+            <p><h2>Примеры</h2></p>
+            <code><span class="keyword">include</span> <span class="string-lit">"system.cd"</span>;
+
+<span class="function">println</span>(<span class="identifier">File</span>.<span class="function">exists</span>(<span class="string-lit">"Your/Path/To/File/text.txt"</span>));
+<span class="identifier">File</span>.<span class="function">writeAllText</span>(<span class="string-lit">"Your/Path/To/File/text.txt"</span>, <span class="string-lit">"Hello world!"</span>);</code>
+        </div>
+
+        <p style="height: 30px;"></p>
+
+        <div id="list-class">
+            <p><h2>Класс List&lt;T&gt;</h2></p>
+            <p>Класс List&lt;T&gt; нужен для создания и использования динамических массивов (списков)</p>
+            <table>
+                <tr>
+                    <th>Методы</th>
+                    <th>Назначение</th>
+                </tr>
+                <tr>
+                    <td>add(value : T)</td>
+                    <td>Добавляет в конец списка переданный элемент</td>
+                </tr>
+                <tr>
+                    <td>get(index : int)</td>
+                    <td>Возвращает элемент списка по его указанному индексу</td>
+                </tr>
+                <tr>
+                    <td>set(index : int, value : T)</td>
+                    <td>Устанавливает элементу с переданным индексом переданное значение</td>
+                </tr>
+                <tr>
+                    <td>removeAt(index : int)</td>
+                    <td>Удаляет из списка элемент с переданным индексом</td>
+                </tr>
+                <tr>
+                    <td>remove(value : T)</td>
+                    <td>Удаляет из списка первый встречный элемент, равный переданному</td>
+                </tr>
+                <tr>
+                    <td>contains(value : T)</td>
+                    <td>Проверяет, находится ли в списке переданный элемент и возвращает true если находится, иначе - false</td>
+                </tr>
+                <tr>
+                    <td>indexOf(value : T)</td>
+                    <td>Возвращает индекс первого встречного элемента, равного переданному</td>
+                </tr>
+                <tr>
+                    <td>length()</td>
+                    <td>Возвращает длину списка</td>
+                </tr>
+            </table>
+
+            <p><h2>Примеры</h2></p>
+            <code><span class="keyword">include</span> <span class="string-lit">"system.cd"</span>;
+
+<span class="identifier">List</span><<span class="keyword">int</span>> <span class="identifier">list</span> = <span class="keyword">new</span> <span class="identifier">List</span><<span class="keyword">int</span>>();
+<span class="identifier">list</span>.<span class="function">add</span>(<span class="number-lit">1</span>);
+<span class="identifier">list</span>.<span class="function">add</span>(<span class="number-lit">2</span>);
+<span class="identifier">list</span>.<span class="function">add</span>(<span class="number-lit">3</span>);
+<span class="function">println</span>(<span class="identifier">list</span>.<span class="function">get</span>(<span class="number-lit">0</span>));   <span class="comment">// Выведет 1</span>
+<span class="identifier">list</span>.<span class="function">set</span>(<span class="number-lit">1</span>, <span class="number-lit">4</span>);   <span class="comment">// Заменит 2 на 4</span></code>
+        </div>
+    </div>
+</body>
+</html>

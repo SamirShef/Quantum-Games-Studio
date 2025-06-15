@@ -1,0 +1,126 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: #1E1E1E;
+    color: white;
+}
+
+.upper-panel {
+    display: flex;
+    height: 10vh;
+    padding: 1vh;
+    white-space: 100%;
+    align-items: center;
+    gap: 2rem;
+}
+
+.upper-panel p {
+    font-size: large;
+}
+
+.logo-link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+.logo {
+    background-image: url("../../img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80%;
+    aspect-ratio: 1 / 1;
+    
+}
+
+.coddy-link {
+    color: white;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.coddy-link:hover {
+    text-decoration: underline;
+}
+
+.project-name h1 {
+    font-weight: 1000;
+    font-size: 6rem;
+    background: linear-gradient(90deg, #e9934d, #e22d00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.main {
+    height: auto;
+    padding: 15px;
+}
+
+.main h2 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #4dcae9, #0075e2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+}
+
+.main p {
+    font-size: 1.2rem;
+}
+
+code {
+    font-size: 1.2rem;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    padding: 1em;
+    border-radius: 4px;
+    background-color: #282c34;
+    color: #abb2bf;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    display: inline-block;
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+pre code {
+    display: block;
+    padding: 1em;
+    margin: 1em 0;
+    overflow-x: auto;
+    line-height: 1.5;
+    tab-size: 4;
+    white-space: pre;
+}
+
+code .keyword {
+    color: #E8AD81;
+}
+
+code .string-lit {
+    color: #CE9178;
+}
+
+code .number-lit {
+    color: #B5CEA8;
+}
+
+code .comment {
+    color: #6A9955;
+    font-style: italic;
+}
+
+code .function {
+    color: #bb61ef;
+}
+
+code .identifier {
+    color: #70B7E4;
+}

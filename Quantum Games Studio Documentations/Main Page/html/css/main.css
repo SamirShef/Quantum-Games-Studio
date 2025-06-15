@@ -1,0 +1,82 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: #1E1E1E;
+    color: white;
+}
+
+.upper-panel {
+    display: flex;
+    height: 10vh;
+    padding: 1vh;
+    white-space: 100%;
+    align-items: center;
+    gap: 2rem;
+}
+
+.upper-panel p {
+    font-size: large;
+}
+
+.logo-link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+.logo {
+    background-image: url("../../img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80%;
+    aspect-ratio: 1 / 1;
+}
+
+.coddy-link {
+    color: white;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.coddy-link:hover {
+    text-decoration: underline;
+}
+
+.main-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    padding-top: 2rem;
+}
+
+.main-panel h1 {
+    font-weight: 900;
+    font-size: 4rem;
+    background: linear-gradient(90deg, #e9934d, #e22d00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.main-panel h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    background: linear-gradient(90deg, #4dcae9, #0075e2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin: 0;
+}
+
+.main-panel p {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
