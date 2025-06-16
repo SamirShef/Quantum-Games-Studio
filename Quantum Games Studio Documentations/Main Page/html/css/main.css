@@ -47,8 +47,8 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    aspect-ratio: 1 / 1;
-    height: 25%;
+    height: 40vh;
+    width: 40vh;
     opacity: 0;
 
     animation: .7s .2s show-anim forwards;
@@ -68,7 +68,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: auto;
+    min-height: 80vh;
     padding-top: 2rem;
 }
 
