@@ -24,6 +24,9 @@
         <ul style="font-size: 1.2rem;">
             <li><b><a href="#file-class" style="color: #199cf3;">File</a></b></li>
             <li><b><a href="#list-class" style="color: #199cf3;">List&lt;T&gt;</a></b></li>
+            <li><b><a href="#dict-class" style="color: #199cf3;">Dict&lt;TKey, TValue&gt;</a></b></li>
+            <li><b><a href="#char-class" style="color: #199cf3;">Char</a></b></li>
+            <li><b><a href="#string-class" style="color: #199cf3;">String</a></b></li>
         </ul>
 
         <p style="height: 30px;"></p>
@@ -57,8 +60,10 @@
             <p><h2>Примеры</h2></p>
             <code><span class="keyword">include</span> <span class="string-lit">"system.cd"</span>;
 
-<span class="function">println</span>(<span class="identifier">File</span>.<span class="function">exists</span>(<span class="string-lit">"Your/Path/To/File/text.txt"</span>));
-<span class="identifier">File</span>.<span class="function">writeAllText</span>(<span class="string-lit">"Your/Path/To/File/text.txt"</span>, <span class="string-lit">"Hello world!"</span>);</code>
+<span class="keyword">func</span> <span class="identifier">main</span>() {
+    <span class="function">println</span>(<span class="identifier">File</span>.<span class="function">exists</span>(<span class="string-lit">"Your/Path/To/File/text.txt"</span>));
+    <span class="identifier">File</span>.<span class="function">writeAllText</span>(<span class="string-lit">"Your/Path/To/File/text.txt"</span>, <span class="string-lit">"Hello world!"</span>);
+}</code>
         </div>
 
         <p style="height: 30px;"></p>
@@ -108,12 +113,149 @@
             <p><h2>Примеры</h2></p>
             <code><span class="keyword">include</span> <span class="string-lit">"system.cd"</span>;
 
-<span class="identifier">List</span><<span class="keyword">int</span>> <span class="identifier">list</span> = <span class="keyword">new</span> <span class="identifier">List</span><<span class="keyword">int</span>>();
-<span class="identifier">list</span>.<span class="function">add</span>(<span class="number-lit">1</span>);
-<span class="identifier">list</span>.<span class="function">add</span>(<span class="number-lit">2</span>);
-<span class="identifier">list</span>.<span class="function">add</span>(<span class="number-lit">3</span>);
-<span class="function">println</span>(<span class="identifier">list</span>.<span class="function">get</span>(<span class="number-lit">0</span>));     <span class="comment">// Выведет 1</span>
-<span class="identifier">list</span>.<span class="function">set</span>(<span class="number-lit">1</span>, <span class="number-lit">4</span>);           <span class="comment">// Заменит 2 на 4</span></code>
+<span class="keyword">func</span> <span class="identifier">main</span>() {
+    <span class="keyword">let</span> <span class="identifier">list</span> : <span class="identifier">List</span><<span class="keyword">int</span>> = <span class="keyword">new</span> <span class="identifier">List</span><<span class="keyword">int</span>>();
+    <span class="identifier">list</span>.<span class="function">add</span>(<span class="number-lit">1</span>);
+    <span class="identifier">list</span>.<span class="function">add</span>(<span class="number-lit">2</span>);
+    <span class="identifier">list</span>.<span class="function">add</span>(<span class="number-lit">3</span>);
+    <span class="function">println</span>(<span class="identifier">list</span>.<span class="function">get</span>(<span class="number-lit">0</span>));     <span class="comment">// Выведет 1</span>
+    <span class="identifier">list</span>.<span class="function">set</span>(<span class="number-lit">1</span>, <span class="number-lit">4</span>);           <span class="comment">// Заменит 2 на 4</span>
+}</code>
+        </div>
+
+        <p style="height: 30px;"></p>
+
+        <div id="dict-class">
+            <p><h2>Класс Dict&lt;TKey, TValue&gt;</h2></p>
+            <p>Класс Dict&lt;TKey, TValue&gt; нужен для создания и использования словарей</p>
+            <table>
+                <tr>
+                    <th>Методы</th>
+                    <th>Назначение</th>
+                </tr>
+                <tr>
+                    <td>put(key : TKey, value : TValue)</td>
+                    <td>Добавляет новый элемент словаря или перезаписывает существующий элемент по ключу <i>key</i></td>
+                </tr>
+                <tr>
+                    <td>get(key : TKey)</td>
+                    <td>Возвращает значение последовательности по ключу <i>key</i> или выбрасывает исключение, если такого ключа не существует в последовательности</td>
+                </tr>
+                <tr>
+                    <td>remove(key : TKey)</td>
+                    <td>Удаляет из последовательности значение по ключу <i>key</i> или выбрасывает исключение, если такого ключа не существует в последовательности</td>
+                </tr>
+                <tr>
+                    <td>contains(key : TKey)</td>
+                    <td>Проверяет, находится ли в последовательности ключ <i>key</i> и возвращает true если находится, иначе - false</td>
+                </tr>
+                <tr>
+                    <td>getKeys()</td>
+                    <td>Возвращает список ключей словаря</td>
+                </tr>
+                <tr>
+                    <td>getValues()</td>
+                    <td>Возвращает список значений словаря</td>
+                </tr>
+                <tr>
+                    <td>length()</td>
+                    <td>Возвращает длину словаря</td>
+                </tr>
+            </table>
+
+            <p><h2>Примеры</h2></p>
+            <code><span class="keyword">include</span> <span class="string-lit">"system.cd"</span>;
+
+<span class="keyword">func</span> <span class="identifier">main</span>() {
+    <span class="keyword">let</span> <span class="identifier">dict</span> : <span class="identifier">Dict</span><<span class="keyword">string</span>, <span class="keyword">int</span>> = <span class="keyword">new</span> <span class="identifier">Dict</span><<span class="keyword">string</span>, <span class="keyword">int</span>>();
+    <span class="identifier">dict</span>.<span class="function">put</span>(<span class="string-lit">"key1"</span>, <span class="number-lit">1</span>);
+    <span class="identifier">dict</span>.<span class="function">put</span>(<span class="string-lit">"key2"</span>, <span class="number-lit">1</span>);
+    <span class="identifier">dict</span>.<span class="function">put</span>(<span class="string-lit">"key2"</span>, <span class="number-lit">10</span>);     <span class="comment">// Перезапишет значение по ключу key2</span>
+    <span class="function">println</span>(<span class="identifier">dict</span>.<span class="function">get</span>(<span class="string-lit">"key2"</span>));     <span class="comment">// Выведет 10</span>
+}</code>
+        </div>
+
+        <p style="height: 30px;"></p>
+
+        <div id="char-class">
+            <p><h2>Статический класс Char</h2></p>
+            <p>Класс Char нужен для работы с символами <i>char</i></p>
+            <table>
+                <tr>
+                    <th>Методы</th>
+                    <th>Назначение</th>
+                </tr>
+                <tr>
+                    <td>isWhiteSpace(c : char)</td>
+                    <td>Проверяет, является ли текущий символ пробелом и возвращает true если является, иначе - false</td>
+                </tr>
+                <tr>
+                    <td>isDigit(c : char)</td>
+                    <td>Проверяет, является ли текущий символ цифрой и возвращает true если является, иначе - false</td>
+                </tr>
+                <tr>
+                    <td>isLetter(c : char)</td>
+                    <td>Проверяет, является ли текущий символ латинской или кириллической буквой и возвращает true если является, иначе - false</td>
+                </tr>
+                <tr>
+                    <td>isLetterOrDigit(c : char)</td>
+                    <td>Проверяет, является ли текущий символ латинской или кириллической буквой или цифрой и возвращает true если является, иначе - false</td>
+                </tr>
+                <tr>
+                    <td>isUpper(c : char)</td>
+                    <td>Проверяет, является ли текущий символ латинской или кириллической буквой верхнего регистра и возвращает true если является, иначе - false</td>
+                </tr>
+                <tr>
+                    <td>isLower(c : char)</td>
+                    <td>Проверяет, является ли текущий символ латинской или кириллической буквой нижнего регистра и возвращает true если является, иначе - false</td>
+                </tr>
+                <tr>
+                    <td>isLatin(c : char)</td>
+                    <td>Проверяет, является ли текущий символ латинской буквой и возвращает true если является, иначе - false</td>
+                </tr>
+                <tr>
+                    <td>isCyrillic(c : char)</td>
+                    <td>Проверяет, является ли текущий символ кириллической буквой и возвращает true если является, иначе - false</td>
+                </tr>
+                <tr>
+                    <td>toUpper(c : char)</td>
+                    <td>Возвращает текущий символ, переведенный в верхний регистр</td>
+                </tr>
+                <tr>
+                    <td>toLower(c : char)</td>
+                    <td>Возвращает текущий символ, переведенный в нижний регистр</td>
+                </tr>
+            </table>
+
+            <p><h2>Примеры</h2></p>
+            <code><span class="keyword">include</span> <span class="string-lit">"system.cd"</span>;
+
+<span class="keyword">func</span> <span class="identifier">main</span>() {
+    <span class="function">println</span>(<span class="identifier">Char</span>.<span class="function">toLower</span>(<span class="string-lit">'A'</span>));     <span class="comment">// Выведет 'a'</span>
+    <span class="function">println</span>(<span class="identifier">Char</span>.<span class="function">isLower</span>(<span class="string-lit">'A'</span>));     <span class="comment">// Выведет false</span>
+}</code>
+        </div>
+
+        <div id="string-class">
+            <p><h2>Статический класс String</h2></p>
+            <p>Класс String нужен для работы с строками <i>string</i></p>
+            <table>
+                <tr>
+                    <td>toUpper(s : string)</td>
+                    <td>Возвращает текущую строку, переведенную в верхний регистр</td>
+                </tr>
+                <tr>
+                    <td>toLower(s : string)</td>
+                    <td>Возвращает текущую строку, переведенную в нижний регистр</td>
+                </tr>
+            </table>
+
+            <p><h2>Примеры</h2></p>
+            <code><span class="keyword">include</span> <span class="string-lit">"system.cd"</span>;
+
+<span class="keyword">func</span> <span class="identifier">main</span>() {
+    <span class="function">println</span>(<span class="identifier">String</span>.<span class="function">toLower</span>(<span class="string-lit">"HeLo WoRlD!</span>));     <span class="comment">// Выведет "hello world!"</span>
+}</code>
         </div>
     </div>
 </body>
